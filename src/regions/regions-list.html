@@ -89,7 +89,11 @@
                                  ${roi.show ? '&#9660;' : '&#9658;'}
                              </div>
                          </div>
-                         <div class="regions-table-col shape-show"></div>
+                         <div class="regions-table-col shape-show">
+                            <input type="checkbox"
+                                title="Show/Hide region" checked.one-way="shape.visible"
+                                change.delegate="toggleRegionVisibility(roi_id, $event)"/>
+                         </div>
                          <div class="regions-table-col shape-type">
                              (${(roi.shapes.size - roi.deleted)})
                          </div>

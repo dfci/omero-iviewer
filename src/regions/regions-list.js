@@ -383,6 +383,29 @@ export default class RegionsList extends EventSubscriber {
     }
 
     /**
+     * region visibility toggler
+     *
+     * @param {number} id the region id
+     * @param {Object} event the mouse event object
+     * @memberof RegionsList
+     */
+    toggleRegionVisibility(id, event) {
+        event.stopPropagation();
+        event.preventDefault();
+        let roi = this.regions_info.data.get(id);
+        if (typeof roi === 'undefined') return;
+
+        let ids = [];
+        roi.shapes.forEach((s) => ids.push(s.shape_id));
+        this.context.publish(
+           REGIONS_SET_PROPERTY, {
+               config_id: this.regions_info.image_info.config_id,
+               property : "visible",
+               shapes : ids, value : event.target.checked});
+        return false;
+    }
+
+    /**
      * Show/Hide shapes within roi
      *
      * @param {number} roi_id the roi id

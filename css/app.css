@@ -865,6 +865,7 @@ thumbnail-slider img {
 .shape-show {
     min-width: 15%;
     max-width: 15%;
+    margin-top: -4px;
 }
 
 .rectangle-icon {
