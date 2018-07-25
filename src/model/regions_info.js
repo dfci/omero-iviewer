@@ -238,8 +238,10 @@ export default class RegionsInfo  {
         if (typeof shape[property] !== 'undefined') shape[property] = value;
         // modify the selected set for actions that influence it
         if ((property === 'selected' || property === 'visible') && value) {
-            if (property === 'visible') this.visibility_toggles++;
-            else {
+            if (property === 'visible') {
+                roi.visible++;
+                this.visibility_toggles++;
+            } else {
                 this.data.get(ids.roi_id).show = true;
                 let i = this.selected_shapes.indexOf(id);
                 if (i === -1) this.selected_shapes.push(id);
@@ -255,7 +257,10 @@ export default class RegionsInfo  {
                     roi.deleted++;
                     this.number_of_shapes--;
                     if (!shape.visible) this.visibility_toggles++;
-            } else if (property === 'visible') this.visibility_toggles--;
+            } else if (property === 'visible') {
+                roi.visible--;
+                this.visibility_toggles--;
+            }
         } else if (property === 'deleted' &&
                     typeof shape.is_new === 'boolean' && shape.is_new &&
                     !value) {
@@ -342,7 +347,8 @@ export default class RegionsInfo  {
                     this.data.set(roiId, {
                         shapes: shapes,
                         show: false,
-                        deleted: 0
+                        deleted: 0,
+                        visible: 0
                     });
                 }
             }
