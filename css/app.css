@@ -707,7 +707,7 @@ thumbnail-slider img {
 }
 .channel-button-group {
     float: left;
-    min-width: 70px;
+    min-width: 90px;
     width: 15%;
 }
 .channel-button-group .channel {

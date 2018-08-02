@@ -283,6 +283,16 @@ export default class ChannelRange  {
             appendTo: $(this.element).find('.channel-color'),
             change: (color) => this.onColorChange(color.toHexString())
         });
+
+        let regExp = /\(([^)]+)\)/;
+        let label = $(this.element).find(".channel-label").text();
+        let matches = regExp.exec(label);
+        if (matches !== null) {
+            $(this.element).find(".channel-label").text(function () {
+                return label.replace(matches[0], '');
+            })
+
+        }
     }
 
     /**
