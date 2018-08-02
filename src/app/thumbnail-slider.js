@@ -496,13 +496,16 @@ export default class ThumbnailSlider extends EventSubscriber {
         if (!append) thumbnails.reverse();
 
         thumbnails.map((item) => {
+            //Hide thumbnail images so only full resolution images appear on left hand bar
+            if (item.Name.includes('[thumbnail]')) return;
+
             let id = item['@id'];
             let entry = {
                 id: id,
                 url: thumbPrefix + id + "/",
                 title: typeof item.Name === 'string' ? item.Name : id,
                 revision : 0
-            }
+            };
             if (append) {
                 this.thumbnails.push(entry);
                 this.thumbnails_end_index++;
