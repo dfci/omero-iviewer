@@ -11,4 +11,3 @@ omero_iviewer.egg-info
 libs
 .omero
 .idea/*
-package-lock.json
