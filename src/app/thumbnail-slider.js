@@ -429,7 +429,7 @@ export default class ThumbnailSlider extends EventSubscriber {
             (this.context.initial_type === INITIAL_TYPES.IMAGES &&
             parent_type === INITIAL_TYPES.DATASET)) {
                 url += this.web_api_base + DATASETS_REQUEST_URL +
-                    '/' + parent_id + '/images/?';
+                    '/' + 4 + '/images/?';
         } else if (this.context.initial_type === INITIAL_TYPES.WELL ||
                     (this.context.initial_type === INITIAL_TYPES.IMAGES &&
                     parent_type === INITIAL_TYPES.WELL)) {

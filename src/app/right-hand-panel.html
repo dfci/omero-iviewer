@@ -22,17 +22,17 @@
     <require from="../info/info"></require>
 
     <ul id="panel-tabs" class="nav nav-tabs" role="tablist">
-        <li class="${context.selected_tab === TABS.INFO ? 'active' : ''}">
-            <a href="${'#' + TABS.INFO}" role="tab">Info</a>
-        </li>
-        <li class="${context.selected_tab === TABS.SETTINGS ? 'active' : ''}">
-            <a href="${'#' + TABS.SETTINGS}" role="tab">Settings</a>
-        </li>
         <li class="${context.selected_tab === TABS.ROIS ? 'active' : ''}">
             <a href="${'#' + TABS.ROIS}" role="tab">
                 ROIs ${image_config && image_config.image_info ?
-                        '[' + image_config.image_info.roi_count + ']' : ''}
+                '[' + image_config.image_info.roi_count + ']' : ''}
             </a>
+        </li>
+        <li class="${context.selected_tab === TABS.SETTINGS ? 'active' : ''}">
+            <a href="${'#' + TABS.SETTINGS}" role="tab">Biomarkers</a>
+        </li>
+        <li class="${context.selected_tab === TABS.INFO ? 'active' : ''}">
+            <a href="${'#' + TABS.INFO}" role="tab">Info</a>
         </li>
     </ul>
 

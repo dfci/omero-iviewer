@@ -52,24 +52,24 @@ module.exports = {
       { test: /\.html$/, loader: 'html-loader' }
     ]
   },
-  devServer: {
-    port: 8080,
-    proxy: {
-        '/iviewer/**': {
-            target: 'http://localhost'
-        },
-        '/api/**': {
-            target: 'http://localhost'
-        },
-        '/webgateway/**': {
-            target: 'http://localhost'
-        },
-        '/webclient/**': {
-            target: 'http://localhost'
-        },
-        '/static/**': {
-            target: 'http://localhost'
+    devServer: {
+        port: 8080,
+        proxy: {
+            '/iviewer/**': {
+                target: 'http://35.231.71.73'
+            },
+            '/api/**': {
+                target: 'http://35.231.71.73'
+            },
+            '/webgateway/**': {
+                target: 'http://35.231.71.73'
+            },
+            '/webclient/**': {
+                target: 'http://35.231.71.73'
+            },
+            '/static/**': {
+                target: 'http://35.231.71.73'
+            }
         }
     }
-  }
 };

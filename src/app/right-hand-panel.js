@@ -56,7 +56,11 @@ export class RightHandPanel {
      */
     constructor(context, bindingEngine) {
         this.context = context;
+
+        //Select ROI tab by default
+        this.context.selected_tab = TABS.ROIS;
         this.bindingEngine = bindingEngine;
+
         // set initial image config
         this.image_config = this.context.getSelectedImageConfig();
     }
