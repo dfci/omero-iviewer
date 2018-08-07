@@ -284,7 +284,6 @@ export default class ChannelRange  {
             change: (color) => this.onColorChange(color.toHexString())
         });
 
-        let regExp = /\(([^)]+)\)/;
         let label = $(this.element).find(".channel-label").text().toString().trim();
         const labelParser = {
             'DAPI': 'DAPI',
@@ -296,11 +295,18 @@ export default class ChannelRange  {
             'Opal780': 'Opal 780',
             'AF': 'AF'
         };
-        console.log(labelParser);
         if (label in labelParser) {
             $(this.element).find(".channel-label").text(function () {
                 return labelParser[label]
             })
+        }
+        let regExp = /\(([^)]+)\)/;
+        let matches = regExp.exec(label);
+        if (matches !== null) {
+            $(this.element).find(".channel-label").text(function () {
+                return label.replace(matches[0], '');
+            })
+
         }
     }
 
