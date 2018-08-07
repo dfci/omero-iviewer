@@ -285,13 +285,23 @@ export default class ChannelRange  {
         });
 
         let regExp = /\(([^)]+)\)/;
-        let label = $(this.element).find(".channel-label").text();
-        let matches = regExp.exec(label);
-        if (matches !== null) {
+        let label = $(this.element).find(".channel-label").text().toString().trim();
+        console.log(label);
+        const labelParser = {
+            'DAPI': 'DAPI',
+            'Opal480': 'CD8',
+            'Opal520': 'PDL1',
+            'Opal570': 'FoxP3',
+            'Opal620': 'PD1',
+            'Opal690': 'CK',
+            'Opal780': 'Opal 780',
+            'AF': 'AF'
+        };
+        console.log(labelParser);
+        if (label in labelParser) {
             $(this.element).find(".channel-label").text(function () {
-                return label.replace(matches[0], '');
+                return labelParser[label]
             })
-
         }
     }
 
