@@ -845,8 +845,8 @@ thumbnail-slider img {
     max-width: 8%;
 }
 .shape-type {
-    min-width: 44%;
-    max-width: 44%;
+    min-width: 45%;
+    max-width: 45%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -863,8 +863,8 @@ thumbnail-slider img {
     max-width: 25%;
 }
 .shape-show {
-    min-width: 12%;
-    max-width: 12%;
+    min-width: 10%;
+    max-width: 10%;
     margin-top: -4px;
 }
 

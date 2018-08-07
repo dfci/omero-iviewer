@@ -429,12 +429,12 @@ export default class ThumbnailSlider extends EventSubscriber {
             (this.context.initial_type === INITIAL_TYPES.IMAGES &&
             parent_type === INITIAL_TYPES.DATASET)) {
                 url += this.web_api_base + DATASETS_REQUEST_URL +
-                    '/' + 10 + '/images/?';
+                    '/' + 14 + '/images/?';
         } else if (this.context.initial_type === INITIAL_TYPES.WELL ||
                     (this.context.initial_type === INITIAL_TYPES.IMAGES &&
                     parent_type === INITIAL_TYPES.WELL)) {
                         url += this.context.getPrefixedURI(IVIEWER) +
-                            "/well_images/?id=" + parent_id + "&";
+                            "/well_images/?id=" + 57 + "&";
         }
         url += 'offset=' + offset + '&limit=' + limit;
 
