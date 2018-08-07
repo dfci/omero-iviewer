@@ -286,7 +286,6 @@ export default class ChannelRange  {
 
         let regExp = /\(([^)]+)\)/;
         let label = $(this.element).find(".channel-label").text().toString().trim();
-        console.log(label);
         const labelParser = {
             'DAPI': 'DAPI',
             'Opal480': 'CD8',
