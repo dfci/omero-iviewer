@@ -93,7 +93,7 @@
                                 change.delegate="toggleRegionVisibility(roi_id, $event)"/>
                          </div>
                          <div class="regions-table-col shape-type" style="text-align: left">
-                             ${shape.Text.split('|')[0]} (${(roi.shapes.size - roi.deleted)})
+                             ${shape.Text.split('|')[0].replace('None', 'NOT PHENOTYPED')} (${(roi.shapes.size - roi.deleted)})
                          </div>
 
                         <div class="regions-table-col shape-comment"
