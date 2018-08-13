@@ -167,12 +167,13 @@ a.ui-button:active,
 
 .fixed-header {
     position: fixed;
-    margin: 0px;
+    margin: 0;
+    text-align: center;
     white-space: nowrap;
     min-height: 40px;
     max-height: 40px;
-    background-color: #1F6AAA;
-    border-width: 0;
+    background: none;
+    border-bottom: 1px solid lightgray;
 }
 .fixed-header .dropdown-menu {
     min-width: 160px;
@@ -186,7 +187,7 @@ a.ui-button:active,
 .fixed-header-text {
     text-align:center;
     font-size: 22px;
-    color: white;
+    color: black;
     margin-top: 5px;
 }
 .fixed-header-webclient a {
@@ -228,8 +229,10 @@ a.ui-button:active,
     z-index: 0;
 }
 
+/* top margin is equal to header height to avoid overlapping */
 .center {
-    margin: 0px;
+    margin: 0;
+    margin-top: 40px !important;
     background-color: #f8f8f8;
 }
 
