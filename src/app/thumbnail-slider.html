@@ -31,14 +31,18 @@
     </div>
     <div class="thumbnail-scroll-panel"
         show.bind="!requesting_thumbnail_data">
-        <img id="${'img-thumb-' + thumb.id}" repeat.for="thumb of thumbnails"
-             css="${image_config.image_info.image_id === thumb.id ?
+        <div repeat.for="thumb of thumbnails">
+            <img id="${'img-thumb-' + thumb.id}"
+                 css="${image_config.image_info.image_id === thumb.id ?
                  'border: 5px solid rgba(0,60,136,0.5)' : 'border: none'}"
-             src.bind="thumb.url + '?version=' + thumb.revision"
-             title="${thumb.title}"
-             alt="Not Found"
-             click.delegate="onClick(thumb.id)"
-             dblclick.delegate="onDoubleClick(thumb.id, $event)"/>
+                 src.bind="thumb.url + '?version=' + thumb.revision"
+                 title="${thumb.title}"
+                 alt="Not Found"
+                 click.delegate="onClick(thumb.id)"
+                 dblclick.delegate="onDoubleClick(thumb.id, $event)"/>
+            <label>${thumb.control ? 'Control Image' : ''}</label>
+        </div>
+
     </div>
     <div show.bind="thumbnails_end_index < thumbnails_count"
          click.delegate="requestMoreThumbnails(false, true)"

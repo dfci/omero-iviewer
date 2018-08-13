@@ -504,8 +504,15 @@ export default class ThumbnailSlider extends EventSubscriber {
                 id: id,
                 url: thumbPrefix + id + "/",
                 title: typeof item.Name === 'string' ? item.Name : id,
-                revision : 0
+                revision : 0,
+                control: false
             };
+
+            //If thumbnail is control image, add flag
+            if (item.Name.toLowerCase().includes('control')) {
+                entry.control = true;
+            }
+
             if (append) {
                 this.thumbnails.push(entry);
                 this.thumbnails_end_index++;
