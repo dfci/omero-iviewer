@@ -129,7 +129,7 @@
                         <div class="regions-table-col shape-comment"
                              style="text-align: left"
                              show.bind="active_column === 'comments'">
-                                ${shape.Text ? shape.Text.split('|')[1] : ''}
+                                ${shape.Text && shape.Text.indexOf('|') > -1 ? shape.Text.split('|')[1] : shape.Text}
                         </div>
                         <div class="regions-table-col shape-area"
                              show.bind="active_column === 'measurements'"
