@@ -101,19 +101,6 @@
         <channel-settings image_config.bind="image_config"></channel-settings>
     </div>
 
-    <div show.bind="image_config.image_info.ready" class="row">
-        <hr />
-        <div>User Settings:</div>
-        <div class="user-settings">
-            <div repeat.for="rdef of rdefs"
-                class="user-setting"
-                click.delegate="applyUserSetting($index)">
-                <img src.bind="getRdefThumbUrl() + '/?rdefId=' + rdef.id + '&' + revision" class="img-thumbnail">
-                <div>${rdef.owner.firstName + ' ' + rdef.owner.lastName}</div>
-            </div>
-        </div>
-    </div>
-
     <div class="disabled-color loading-text"
          show.bind="!image_config.image_info.ready">Loading Image Data ...
      </div>
