@@ -284,7 +284,7 @@ export default class ChannelRange  {
             change: (color) => this.onColorChange(color.toHexString())
         });
 
-        let label = $(this.element).find(".channel-label").text().toString().trim();
+        let label = $(this.element).find(".channel-label").text().toString().replace(' ', '').trim();
         const labelParser = {
             'DAPI': 'DAPI',
             'Opal480': 'CD8',
