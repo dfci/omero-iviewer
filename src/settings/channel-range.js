@@ -288,11 +288,11 @@ export default class ChannelRange  {
         const labelParser = {
             'DAPI': 'DAPI',
             'Opal480': 'CD8',
-            'Opal520': 'PDL1',
+            'Opal520': 'PD-L1',
             'Opal570': 'FoxP3',
-            'Opal620': 'PD1',
+            'Opal620': 'PD-1',
             'Opal690': 'Tumor',
-            'Opal780': 'Opal 780',
+            'Opal780': 'CD68',
             'AF': 'AF'
         };
         if (label in labelParser) {
