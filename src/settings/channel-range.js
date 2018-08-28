@@ -291,7 +291,7 @@ export default class ChannelRange  {
             'Opal520': 'PDL1',
             'Opal570': 'FoxP3',
             'Opal620': 'PD1',
-            'Opal690': 'CK',
+            'Opal690': 'Tumor Marker',
             'Opal780': 'Opal 780',
             'AF': 'AF'
         };
