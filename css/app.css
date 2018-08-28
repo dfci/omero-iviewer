@@ -716,6 +716,7 @@ thumbnail-slider img {
     overflow-x: hidden;
     min-width: 50px;
     width: 80%;
+    font-size: 10px !important;
 }
 .channel-color {
     top: 30px;
