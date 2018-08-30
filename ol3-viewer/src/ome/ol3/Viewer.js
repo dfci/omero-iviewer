@@ -67,6 +67,7 @@ goog.require('ol.PluggableMap');
  * @param {Object.<string, *>=} options additional properties (optional)
  */
 ome.ol3.Viewer = function(id, options) {
+    alert("123 Viewier");
     goog.base(this);
 
     var opts = options || {};
