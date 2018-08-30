@@ -106,6 +106,7 @@ ome.ol3.utils.Net.checkAndSanitizeUri = function(uri) {
  * @return {Object|null} a server address or ip or null (if something goes badly wrong)
  */
 ome.ol3.utils.Net.checkAndSanitizeServerAddress = function(addressOrIp) {
+    alert('1');
     if (typeof(addressOrIp) !== 'string') return null;
 
     try {
