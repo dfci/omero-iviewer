@@ -106,7 +106,6 @@ ome.ol3.utils.Net.checkAndSanitizeUri = function(uri) {
  * @return {Object|null} a server address or ip or null (if something goes badly wrong)
  */
 ome.ol3.utils.Net.checkAndSanitizeServerAddress = function(addressOrIp) {
-    alert('1');
     if (typeof(addressOrIp) !== 'string') return null;
 
     try {
@@ -119,7 +118,6 @@ ome.ol3.utils.Net.checkAndSanitizeServerAddress = function(addressOrIp) {
         // do we have protocol info in there
         var position = addressOrIp.indexOf("://");
         if (position === -1) {
-            alert('2');
             ret['protocol'] = "https";
         } // we default
         else {
