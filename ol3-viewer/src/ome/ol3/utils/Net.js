@@ -117,7 +117,7 @@ ome.ol3.utils.Net.checkAndSanitizeServerAddress = function(addressOrIp) {
 
         // do we have protocol info in there
         var position = addressOrIp.indexOf("://");
-        if (position === -1) ret['protocol'] = "http"; // we default
+        if (position === -1) ret['protocol'] = "https"; // we default
         else {
             // we do have a protocol, parse it. we accept only http(s) and file
             var prot = addressOrIp.substring(0, position).toLowerCase();
