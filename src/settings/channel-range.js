@@ -185,19 +185,21 @@ export default class ChannelRange  {
 
         // channel range slider
         let channelRange = $(this.element).find(".channel-slider");
-        let channelRangeMin =
-            this.mode === CHANNEL_SETTINGS_MODE.FULL_RANGE ?
-                this.full_range_min_max.start_min :
-                this.min_max_range.start_val > this.min_max_range.start_min ?
-                    this.min_max_range.start_min : this.min_max_range.start_val;
-        let channelRangeMax =
-            this.mode === CHANNEL_SETTINGS_MODE.FULL_RANGE ?
-                this.full_range_min_max.end_max :
-                this.min_max_range.end_val < this.min_max_range.end_max ?
-                    this.min_max_range.end_max : this.min_max_range.end_val;
-        if (this.min_max_range.step_size !== 1)
-            channelRangeMax =
-                this.adjustCalculatedMax(channelRangeMin, channelRangeMax);
+        // let channelRangeMin =
+        //     this.mode === CHANNEL_SETTINGS_MODE.FULL_RANGE ?
+        //         this.full_range_min_max.start_min :
+        //         this.min_max_range.start_val > this.min_max_range.start_min ?
+        //             this.min_max_range.start_min : this.min_max_range.start_val;
+        // let channelRangeMax =
+        //     this.mode === CHANNEL_SETTINGS_MODE.FULL_RANGE ?
+        //         this.full_range_min_max.end_max :
+        //         this.min_max_range.end_val < this.min_max_range.end_max ?
+        //             this.min_max_range.end_max : this.min_max_range.end_val;
+        // if (this.min_max_range.step_size !== 1)
+        //     channelRangeMax =
+        //         this.adjustCalculatedMax(channelRangeMin, channelRangeMax);
+        let channelRangeMin = 0;
+        let channelRangeMax = 255;
         channelRange.slider({
             min: channelRangeMin,
             max: channelRangeMax,
@@ -328,8 +330,8 @@ export default class ChannelRange  {
                         this.min_max_range.step_size) *
             this.min_max_range.step_size;
 
-        return (jqueryCalculatedMax > range_max) ?
-                    range_max + this.min_max_range.step_size : range_max;
+        //return (jqueryCalculatedMax > range_max) ? range_max + this.min_max_range.step_size : range_max;
+        return 255
     }
 
     /**
