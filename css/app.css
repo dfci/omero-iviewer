@@ -37,6 +37,7 @@ hr {
 
 .container-fluid {
     padding: 0px;
+    padding-bottom: 40px;
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
